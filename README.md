@@ -1,1 +1,1 @@
-# generator-storybook-drupal-component
+# generator-sb-drupal

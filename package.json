@@ -1,7 +1,7 @@
 {
-  "name": "generator-storybook-drupal-component",
+  "name": "generator-sb-drupal",
   "version": "0.1.0",
-  "description": "Generates components for mel-miller/storybook-drupal",
+  "description": "Generates components for mel-miller/sb-drupal",
   "files": [
     "generators"
   ],
@@ -12,7 +12,7 @@
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mel-miller/generator-storybook-drupal-component.git"
+    "url": "https://github.com/mel-miller/generator-sb-drupal.git"
   },
   "dependencies": {
     "yeoman-generator": "^5.7.0"
