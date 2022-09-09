@@ -4,11 +4,9 @@ const Generator = require('yeoman-generator');
 const toTitleCase = (str) => {
   return str.replace(/\w\S*/g, (m) => m.charAt(0).toUpperCase() + m.substr(1).toLowerCase());
 };
-
 const toKebabCase = (str) => {
   return str.toLowerCase().replace(/\s/g, '-');
 };
-
 const toPascalCase = (str) => {
   return str.replace(/\w\S*/g, (m) => m.charAt(0).toUpperCase() + m.substr(1).toLowerCase()).replace(/\s/g, '');
 };
@@ -20,7 +18,12 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    const answers = await this.prompt([
+    this.answers = await this.prompt([
+      {
+        type: 'confirm',
+        name: 'directoryCheck',
+        message: 'Are you in the right directory?',
+      },
       {
         type: 'input',
         name: 'name',
@@ -32,12 +35,41 @@ module.exports = class extends Generator {
           return true;
         },
       },
+      {
+        type: 'confirm',
+        name: 'js',
+        message: 'Include a component .js file?',
+        default: false,
+      },
     ]);
+  }
 
-    let componentLabel = toTitleCase(answers.name);
-    let componentKebabName = toKebabCase(answers.name);
-    let componentPascalName = toPascalCase(answers.name);
+  writing() {
+    const props = {
+      tag: toKebabCase(this.answers.name),
+      component: toPascalCase(this.answers.name),
+      label: toTitleCase(this.answers.name),
+      includeJs: this.answers.js,
+    };
 
-    this.log('Component Name', componentLabel, 'has been created.');
+    // File types needed for component.
+    const extensions = ['stories.js', 'docs.mdx', 'twig', 'scss'];
+    if (props.includeJs) {
+      extensions.push('js');
+    }
+
+    // Set destination directory.
+    this.destinationRoot(`${props.tag}`);
+
+    // Generate files for component.
+    extensions.forEach((ext) => {
+      if (ext == 'scss') {
+        this.fs.copyTpl(this.templatePath(`_component.${ext}`), this.destinationPath(`_${props.tag}.${ext}`), props);
+      } else {
+        this.fs.copyTpl(this.templatePath(`component.${ext}`), this.destinationPath(`${props.tag}.${ext}`), props);
+      }
+    });
+
+    this.log(props.label, 'has been created.');
   }
 };
