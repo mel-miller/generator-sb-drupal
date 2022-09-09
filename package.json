@@ -1,0 +1,16 @@
+{
+  "name": "generator-storybook-drupal-component",
+  "version": "0.1.0",
+  "description": "Generates components for mel-miller/storybook-drupal",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "M. Miller",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "yeoman-generator": "^5.7.0"
+  }
+}
