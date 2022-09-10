@@ -1,5 +1,5 @@
 import Twig<%= component %> from './<%= tag %>.twig';
-import <%= component %> Docs from '!!raw-loader!./<%= tag %>.docs.mdx';
+import <%= component %>Docs from '!!raw-loader!./<%= tag %>.docs.mdx';
 <% if(includeJs){ %>
 import './<%= tag %>.js';
 <% } %>
