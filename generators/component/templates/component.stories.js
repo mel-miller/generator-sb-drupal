@@ -4,7 +4,7 @@ import <%= component %> Docs from '!!raw-loader!./<%= tag %>.docs.mdx';
 import './<%= tag %>.js';
 <% } %>
 export default {
-  title: 'Components/<%= label %>',
+  title: '<%= category %>/<%= label %>',
   parameters: {
     componentSubtitle: '',
     docs: {

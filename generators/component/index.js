@@ -42,6 +42,13 @@ module.exports = class extends Generator {
           },
         },
         {
+          type: 'list',
+          name: 'category',
+          message: 'Choose the category for this component.',
+          choices: ['Components', 'Foundations', 'Utilities', 'Recipes'],
+          default: 'Components',
+        },
+        {
           type: 'confirm',
           name: 'js',
           message: 'Include a component .js file?',
@@ -57,6 +64,8 @@ module.exports = class extends Generator {
         tag: toKebabCase(this.answers.name),
         component: toPascalCase(this.answers.name),
         label: toTitleCase(this.answers.name),
+        category: this.answers.category,
+        categoryDir: this.answers.category.toLowerCase(),
         includeJs: this.answers.js,
       };
 
@@ -67,7 +76,7 @@ module.exports = class extends Generator {
       }
 
       // Set destination directory.
-      this.destinationRoot(`${props.tag}`);
+      this.destinationRoot(`src/${props.categoryDir}/${props.tag}`);
 
       // Generate files for component.
       extensions.forEach((ext) => {
