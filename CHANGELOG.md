@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Add `behaviors` to naming convention of component-specific js.
+- Add documentation.
 
 ## [v0.1.0] - 2022-09-10
 
