@@ -13,7 +13,7 @@ npm install -g yo
 Install this generator as a dev dependency to your project.
 
 ```
-npm install -D git@github.com:mel-miller/generator-sb-drupal.git
+npm install -D generator-sb-drupal
 ```
 
 ## Usage
