@@ -24,4 +24,10 @@ This generator should be run from the root of your project.
 yo sb-drupal:component
 ```
 
-Follow the prompts and a new component will be created in the proper directory within your `src` directory.
+Follow the prompts and a new directory will be created within the proper category directory in `src`. The new directory will contain the following starter files:
+
+- `{component-name}.stories.js`
+- `{component-name}.twig`
+- `_{component-name}.scss`
+- `{component-name}.docs.mdx`
+- `{component-name}.behaviors.js` (if selected)
