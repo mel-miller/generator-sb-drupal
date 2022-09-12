@@ -72,7 +72,7 @@ module.exports = class extends Generator {
       // File types needed for component.
       const extensions = ['stories.js', 'docs.mdx', 'twig', 'scss'];
       if (props.includeJs) {
-        extensions.push('js');
+        extensions.push('behaviors.js');
       }
 
       // Set destination directory.
