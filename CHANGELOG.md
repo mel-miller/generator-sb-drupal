@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [v0.1.2] - 2022-09-12
+
 - Update documentation.
 
 ## [v0.1.1] - 2022-09-12
