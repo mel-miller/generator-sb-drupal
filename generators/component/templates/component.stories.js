@@ -19,4 +19,4 @@ export default {
 
 const Template = ({}) => Twig<%= component %>({});
 
-export const Default = Template.bind({});
+export const <%= component %> = Template.bind({});
