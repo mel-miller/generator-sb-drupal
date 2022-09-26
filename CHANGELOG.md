@@ -1,5 +1,8 @@
 # Changelog
 
+- Docs template: Start with sections commented out.
+- Stories template: Make default export use component name instead of "Default".
+
 ## [Unreleased]
 
 ## [v0.1.2] - 2022-09-12
