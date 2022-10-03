@@ -71,13 +71,18 @@ module.exports = class extends Generator {
       };
 
       // File types needed for component.
-      const extensions = ['stories.js', 'docs.mdx', 'scss'];
+      const extensions = ['stories.js', 'docs.mdx'];
 
       // Determine if 'twig' or 'local.twig' is needed.
       if (props.category === 'Components') {
         extensions.push('twig');
       } else {
         extensions.push('local.twig');
+      }
+
+      // Determine if 'scss' is needed.
+      if (props.category !== 'Recipes') {
+        extensions.push('scss');
       }
 
       // Determine if 'js' is needed.

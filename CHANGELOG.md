@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 
-- Generate `local.twig` files unless of category `Components`.
+- Generate `local.twig` files unless in `Components` category.
+- Prevent generation of `scss` file for `Recipes`.
 
 ## [v0.1.3] - 2022-09-26
 
