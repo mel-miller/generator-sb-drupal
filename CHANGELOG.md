@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Generate `local.twig` files unless of category `Components`.
+
 ## [v0.1.3] - 2022-09-26
 
 - Docs template: Start with sections commented out.

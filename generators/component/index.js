@@ -67,10 +67,20 @@ module.exports = class extends Generator {
         category: this.answers.category,
         categoryDir: this.answers.category.toLowerCase(),
         includeJs: this.answers.js,
+        local: this.answers.category === 'Components' ? '' : '.local',
       };
 
       // File types needed for component.
-      const extensions = ['stories.js', 'docs.mdx', 'twig', 'scss'];
+      const extensions = ['stories.js', 'docs.mdx', 'scss'];
+
+      // Determine if 'twig' or 'local.twig' is needed.
+      if (props.category === 'Components') {
+        extensions.push('twig');
+      } else {
+        extensions.push('local.twig');
+      }
+
+      // Determine if 'js' is needed.
       if (props.includeJs) {
         extensions.push('behaviors.js');
       }

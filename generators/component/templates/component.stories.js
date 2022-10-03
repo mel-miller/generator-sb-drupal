@@ -1,4 +1,4 @@
-import Twig<%= component %> from './<%= tag %>.twig';
+import Twig<%= component %> from './<%= tag %><%= local %>.twig';
 import <%= component %>Docs from '!!raw-loader!./<%= tag %>.docs.mdx';
 <% if(includeJs){ %>
 import './<%= tag %>.behaviors.js';
