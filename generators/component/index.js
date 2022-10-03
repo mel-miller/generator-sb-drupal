@@ -48,13 +48,18 @@ module.exports = class extends Generator {
           choices: ['Components', 'Foundations', 'Utilities', 'Recipes'],
           default: 'Components',
         },
-        {
-          type: 'confirm',
-          name: 'js',
-          message: 'Include a component .js file?',
-          default: false,
-        },
       ]);
+
+      if (this.answers.category === 'Components') {
+        this.extras = await this.prompt([
+          {
+            type: 'confirm',
+            name: 'js',
+            message: 'Include a component .js file?',
+            default: false,
+          },
+        ]);
+      }
     }
   }
 
@@ -66,8 +71,8 @@ module.exports = class extends Generator {
         label: toTitleCase(this.answers.name),
         category: this.answers.category,
         categoryDir: this.answers.category.toLowerCase(),
-        includeJs: this.answers.js,
         local: this.answers.category === 'Components' ? '' : '.local',
+        includeJs: this.answers.category === 'Components' ? this.extras.js : null,
       };
 
       // File types needed for component.
