@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [v0.2.1] - 2022-10-04
+
 - Update stories template to include source code for Components.
 
 ## [v0.2.0] - 2022-10-02
