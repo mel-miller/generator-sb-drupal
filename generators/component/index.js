@@ -73,6 +73,7 @@ module.exports = class extends Generator {
         categoryDir: this.answers.category.toLowerCase(),
         local: this.answers.category === 'Components' ? '' : '.local',
         includeJs: this.answers.category === 'Components' ? this.extras.js : null,
+        includeSrc: this.answers.category === 'Components' ? true : false,
       };
 
       // File types needed for component.

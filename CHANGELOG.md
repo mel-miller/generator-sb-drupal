@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Update stories template to include source code for Components.
+
 ## [v0.2.0] - 2022-10-02
 
 - Generate `local.twig` files unless in `Components` category.
